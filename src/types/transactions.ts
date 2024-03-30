@@ -94,6 +94,7 @@ export interface TransactionWithMeta {
     slot: number
     version?: TransactionVersion | null
     meta?: TransactionMeta | null
+    transaction: Transaction
 }
 
 export interface TransactionSubscriptionParams extends SubscriptionParams {
