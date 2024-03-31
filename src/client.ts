@@ -2,11 +2,11 @@ import { type RpcClientEvents, RpcWebSocketClient, type RpcWebSocketClientOption
 import { Emitter } from '@kdt310722/utils/event'
 import { isWebSocketUrl } from '@kdt310722/utils/string'
 import { BASE_URL } from './constants'
-import type { Block, BlockContext, Slot, SlotContext, SubscriptionParams, TransactionContext, TransactionSubscriptionParams, TransactionWithMeta } from './types'
-import { isNotificationMessageParams } from './utils'
+import type { Block, BlockContext, Slot, SlotContext, SubscriptionParams, Transaction, TransactionContext, TransactionSubscriptionParams } from './types'
+import { formatTransaction, isNotificationMessageParams } from './utils'
 
 export type SyndicaChainStreamEvents = RpcClientEvents & {
-    transaction: (transaction: TransactionWithMeta, context: TransactionContext) => void
+    transaction: (transaction: Transaction, context: TransactionContext) => void
     block: (block: Block, context: BlockContext) => void
     slot: (slot: Slot, context: SlotContext) => void
 }
@@ -73,14 +73,19 @@ export class SyndicaChainStream extends Emitter<SyndicaChainStreamEvents> {
 
     protected registerClientEvents(client: RpcWebSocketClient) {
         const notifyEvents = {
-            transactionNotification: 'transaction',
             blockNotification: 'block',
             slotUpdateNotification: 'slot',
         }
 
         client.on('notify', (method, params) => {
-            if (method in notifyEvents && isNotificationMessageParams(params)) {
-                return this.emit(notifyEvents[method], params.result.value, params.result.context)
+            if (isNotificationMessageParams(params)) {
+                if (method === 'transactionNotification') {
+                    return this.emit('transaction', formatTransaction(params.result.value), params.result.context)
+                }
+
+                if (method in notifyEvents) {
+                    return this.emit(notifyEvents[method], params.result.value, params.result.context)
+                }
             }
 
             return this.emit('unknown-message', JSON.stringify({ method, params }))

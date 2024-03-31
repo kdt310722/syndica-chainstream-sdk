@@ -57,3 +57,6 @@ test-results
 # Miscellaneous
 *.bak
 *.swp
+
+# Project Files
+src/test.ts

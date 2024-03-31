@@ -1,25 +1,12 @@
+import type { BlockResponse } from '@solana/web3.js'
 import type { NotificationMessageParams } from './common'
 
 export interface BlockContext {
     nodeTime: string
 }
 
-export interface Reward {
-    pubkey: string
-    lamports: number
-    postBalance: number
-    rewardType: string
-    commission?: number | null
-}
-
-export interface Block {
-    slot: number
-    blockhash: string
-    rewards: Reward[]
-    blockTime: string
+export interface Block extends Omit<BlockResponse, 'transactions' | 'previousBlockhash'> {
     blockHeight: number
-    parentSlot: number
-    parentBlockhash: string
     excludedTransactionCount: number
 }
 

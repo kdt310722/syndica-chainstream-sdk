@@ -6,7 +6,7 @@ export interface SlotContext {
 
 export interface Slot {
     slot: number
-    parent?: number | null
+    parent: number | null
     status: string
 }
 

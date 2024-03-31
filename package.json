@@ -46,6 +46,12 @@
         "@kdt310722/rpc": ">=0.0.5<0.1.0",
         "@kdt310722/utils": ">=0.0.6<0.1.0"
     },
+    "dependencies": {
+        "@debridge-finance/solana-transaction-parser": "^2.0.1",
+        "@solana/transactions": "2.0.0-preview.2",
+        "@solana/web3.js": "^1.91.2",
+        "bs58": "^5.0.0"
+    },
     "devDependencies": {
         "@commitlint/cli": "^19.2.1",
         "@commitlint/config-conventional": "^19.1.0",
@@ -54,7 +60,8 @@
         "@kdt310722/tsconfig": "^1.0.0",
         "@kdt310722/utils": "^0.0.6",
         "@swc/core": "^1.4.11",
-        "@types/node": "^20.12.0",
+        "@types/bs58": "^4.0.4",
+        "@types/node": "^20.12.2",
         "@vitest/coverage-v8": "^1.4.0",
         "changelogen": "^0.5.5",
         "eslint": "^8.57.0",
