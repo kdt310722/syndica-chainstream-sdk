@@ -2,7 +2,7 @@
     "name": "@kdt310722/syndica-chainstream-sdk",
     "type": "module",
     "version": "0.0.3",
-    "packageManager": "pnpm@8.15.5",
+    "packageManager": "pnpm@8.15.6",
     "description": "An SDK to interact with Syndica ChainStream API",
     "author": "Diep Dang <kdt310722@gmail.com>",
     "license": "MIT",
@@ -47,19 +47,19 @@
         "@kdt310722/utils": ">=0.0.6<0.1.0"
     },
     "dependencies": {
-        "@solana/web3.js": "^1.91.2",
+        "@solana/web3.js": "^1.91.4",
         "bs58": "^5.0.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.2.1",
         "@commitlint/config-conventional": "^19.1.0",
         "@kdt310722/eslint-config": "^0.0.5",
-        "@kdt310722/rpc": "^0.0.7",
+        "@kdt310722/rpc": "^0.0.10",
         "@kdt310722/tsconfig": "^1.0.0",
         "@kdt310722/utils": "^0.0.6",
-        "@swc/core": "^1.4.11",
+        "@swc/core": "^1.4.12",
         "@types/bs58": "^4.0.4",
-        "@types/node": "^20.12.2",
+        "@types/node": "^20.12.5",
         "@vitest/coverage-v8": "^1.4.0",
         "changelogen": "^0.5.5",
         "eslint": "^8.57.0",
@@ -70,8 +70,8 @@
         "rimraf": "^5.0.5",
         "simple-git-hooks": "^2.11.1",
         "tsup": "^8.0.2",
-        "tsx": "^4.7.1",
-        "typescript": "^5.4.3",
+        "tsx": "^4.7.2",
+        "typescript": "^5.4.4",
         "vitest": "^1.4.0"
     },
     "commitlint": {
