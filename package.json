@@ -60,7 +60,7 @@
         "@swc/core": "^1.4.12",
         "@types/bs58": "^4.0.4",
         "@types/node": "^20.12.5",
-        "@vitest/coverage-v8": "^1.4.0",
+        "@vitest/coverage-v8": "^2.0.2",
         "changelogen": "^0.5.5",
         "eslint": "^8.57.0",
         "execa": "^8.0.1",
@@ -72,7 +72,7 @@
         "tsup": "^8.0.2",
         "tsx": "^4.7.2",
         "typescript": "^5.4.4",
-        "vitest": "^1.4.0"
+        "vitest": "^2.0.2"
     },
     "commitlint": {
         "extends": "@commitlint/config-conventional"
