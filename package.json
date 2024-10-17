@@ -2,7 +2,7 @@
     "name": "@kdt310722/syndica-chainstream-sdk",
     "type": "module",
     "version": "0.0.3",
-    "packageManager": "pnpm@8.15.6",
+    "packageManager": "pnpm@9.12.2",
     "description": "An SDK to interact with Syndica ChainStream API",
     "author": "Diep Dang <kdt310722@gmail.com>",
     "license": "MIT",
